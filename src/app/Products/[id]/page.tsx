@@ -5,9 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { ShoppingBag, Heart, Star, Share2 } from "lucide-react";
 import gsap from "gsap";
 import { useParams } from "next/navigation";
+
+import Image from "next/image";
 import { RootState } from "@/store/store";
 import { addToCart } from "@/store/cartSlice";
-import Image from "next/image";
 
 const translations = {
   en: {
