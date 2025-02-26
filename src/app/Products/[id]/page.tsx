@@ -8,6 +8,7 @@ import { useParams } from "next/navigation";
 import { RootState } from "@/store/store";
 import { addToCart } from "@/store/cartSlice";
 import Image from "next/image";
+
 const translations = {
   en: {
     addToCart: "Add to Cart",
