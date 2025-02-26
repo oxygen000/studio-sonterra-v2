@@ -19,8 +19,10 @@ const translations = {
     cardNumber: "Card Number",
     expiry: "Expiry Date",
     cvv: "CVV",
+    total: "Total",
   },
   ar: {
+    total: "المجموع",
     title: "إتمام الشراء",
     contact: "معلومات الاتصال",
     shipping: "عنوان الشحن",

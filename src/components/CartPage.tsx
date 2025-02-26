@@ -26,7 +26,7 @@ const translations = {
 const CartPage = () => {
   const dispatch = useDispatch();
   const language = useSelector((state: RootState) => state.language.current);
-  const { items, total } = useSelector((state: RootState) => state.cart);
+  const { items, total } = useSelector((state: RootState) => state.cart) as unknown as { items: { id: number; image: string; name: string; price: number }[], total: number };
   const t = translations[language as keyof typeof translations];
 
   if (items.length === 0) {

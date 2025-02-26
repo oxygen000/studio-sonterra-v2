@@ -6,6 +6,8 @@ import { addToCart } from "@/store/cartSlice";
 import { ShoppingBag } from "lucide-react";
 import { RootState } from "@/store/store";
 import Link from "next/link";
+import Image from "next/image";
+
 
 const translations = {
   en: { addToCart: "Add to Cart" },
@@ -34,7 +36,7 @@ export const ProductCard = ({ id, name, price, image }: ProductCardProps) => {
       <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
         
         <div className="relative w-full aspect-[4/5]"> 
-          <img src={image} alt={name}  className="object-cover"  />
+          <Image src={image} alt={name}  className="object-cover"  />
           <div className="absolute inset-0 bg-black opacity-0 hover:opacity-10 transition-opacity duration-300"></div>
         </div>
 

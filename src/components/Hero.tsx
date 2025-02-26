@@ -2,6 +2,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
+import Image from "next/image";
 const translations = {
   en: {
     title: "Summer Collection 2024",
@@ -20,7 +21,7 @@ export const Hero = () => {
   const t = translations[language as keyof typeof translations];
   return <div className="relative w-full h-[600px] bg-yellow-50">
       <div className="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d" alt="Fashion banner" className="w-full h-full object-cover" />
+        <Image src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d" alt="Fashion banner" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
       </div>
       <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">

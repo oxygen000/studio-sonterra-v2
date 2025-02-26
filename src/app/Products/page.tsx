@@ -1,6 +1,6 @@
 "use client";
 import { useSelector } from "react-redux";
-import { Search, Filter, ChevronDown } from "lucide-react";
+import { Search, Filter } from "lucide-react";
 import gsap from "gsap";
 import { ProductCard } from "@/components/ProductCard";
 import { RootState } from "@/store/store";
