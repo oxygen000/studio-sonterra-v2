@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ShoppingBag, Heart, Star, Share2 } from "lucide-react";
