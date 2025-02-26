@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { setLanguage } from "@/store/languageSlice";
-import { ShoppingBag, Globe } from "lucide-react";
+import { ShoppingBag, Globe, User } from "lucide-react";
 import { RootState } from "@/store/store";
 import ThemeToggle from "./ThemeToggle";
 
@@ -36,6 +36,7 @@ export const Navbar = () => {
                 </span>
               )}
             </Link>
+            <i><Link href="/login" className="text-gray-600 dark:text-gray-300 hover:text-yellow-500"><User/></Link></i>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Hero } from "@/components/Hero";
-import { ProductsPage } from "./Products/page";
-import ProductGrid from "@/components/ProductGrid";
+import ProductGrid from "@/app/(products)/ProductGrid";
+import ProductsPage from "./(products)/product/page";
 
 export default function HomePage() {
   return (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Providers } from "../store/Provider"; // تأكد من أن المسار صحيح
+import { Providers } from "../store/Provider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import "./globals.css";

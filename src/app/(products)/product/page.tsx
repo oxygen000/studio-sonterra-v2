@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import { Search, Filter } from "lucide-react";
 import gsap from "gsap";
-import { ProductCard } from "@/components/ProductCard";
+import { ProductCard } from "@/app/(products)/ProductCard";
 import { RootState } from "@/store/store";
 import { useEffect, useState } from "react";
 const translations = {
@@ -34,28 +34,28 @@ const translations = {
   }
 };
 const products = [
-// ... existing products ...
 {
   id: 5,
   name: "Evening Gown",
   price: 149.99,
   image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae",
-  category: "dresses"
+  category: "dresses",
+  rating: 2,
 }, {
   id: 6,
   name: "Silk Scarf",
   price: 29.99,
   image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d",
-  category: "accessories"
+  category: "accessories",
+  rating: 5,
 }];
-export const ProductsPage = () => {
+export default function ProductsPage () {
   const language = useSelector((state: RootState) => state.language.current);
   const t = translations[language as keyof typeof translations];
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [filteredProducts, setFilteredProducts] = useState(products);
   useEffect(() => {
-    // GSAP animation for page load
     gsap.from(".product-card", {
       duration: 0.6,
       y: 50,
@@ -75,7 +75,6 @@ export const ProductsPage = () => {
   return <div className="max-w-7xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8 dark:text-white">{t.title}</h1>
       <div className="flex flex-col md:flex-row gap-8 mb-8">
-        {/* Search and Filters */}
         <div className="w-full md:w-64 space-y-6">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
@@ -93,7 +92,6 @@ export const ProductsPage = () => {
             </div>
           </div>
         </div>
-        {/* Product Grid */}
         <div className="flex-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProducts.map(product => <div key={product.id} className="product-card">

@@ -1,9 +1,10 @@
-"use client"; 
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Mail, Lock, User, ArrowRight } from "lucide-react";
 import gsap from "gsap";
+import Link from "next/link";
 import { RootState } from "@/store/store";
 
 const translations = {
@@ -13,6 +14,8 @@ const translations = {
     email: "Email",
     password: "Password",
     name: "Full Name",
+    rememberMe: "Remember me",
+    forgotPassword: "Forgot password?",
     submit: "Submit",
     switchToRegister: "Need an account?",
     switchToLogin: "Already have an account?"
@@ -23,6 +26,8 @@ const translations = {
     email: "البريد الإلكتروني",
     password: "كلمة المرور",
     name: "الاسم الكامل",
+    rememberMe: "تذكرني",
+    forgotPassword: "نسيت كلمة المرور؟",
     submit: "تأكيد",
     switchToRegister: "تحتاج إلى حساب؟",
     switchToLogin: "لديك حساب بالفعل؟"
@@ -33,6 +38,7 @@ export default function AuthPage() {
   const language = useSelector((state: RootState) => state.language.current);
   const t = translations[language as keyof typeof translations];
   const [isLogin, setIsLogin] = useState(true);
+  const [rememberMe, setRememberMe] = useState(false);
 
   useEffect(() => {
     gsap.from(".auth-form", {
@@ -45,6 +51,7 @@ export default function AuthPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log({ rememberMe });
   };
 
   return (
@@ -84,6 +91,17 @@ export default function AuthPage() {
                 required
               />
             </div>
+            {isLogin && (
+              <div className="flex items-center justify-between text-sm">
+                <label className="flex items-center gap-2">
+                  <input type="checkbox" onChange={(e) => setRememberMe(e.target.checked)} />
+                  {t.rememberMe}
+                </label>
+                <Link href="/forgot-password" className="text-blue-500 hover:underline">
+                  {t.forgotPassword}
+                </Link>
+              </div>
+            )}
             <button type="submit" className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2">
               {t.submit}
               <ArrowRight size={20} />

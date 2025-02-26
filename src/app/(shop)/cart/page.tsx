@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "@/store/cartSlice";
@@ -52,7 +54,7 @@ const CartPage = () => {
             <Image
               src={item.image}
               alt={item.name}
-              width={96} // 24 * 4 = 96px
+              width={96} 
               height={96}
               className="w-24 h-24 object-cover rounded"
             />

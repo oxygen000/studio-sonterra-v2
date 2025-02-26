@@ -2,6 +2,7 @@
 
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store"; 
+import Link from "next/link";
 
 const translations = {
   en: {
@@ -9,6 +10,8 @@ const translations = {
     contact: "Contact",
     terms: "Terms & Conditions",
     privacy: "Privacy Policy",
+    sizeguide: "Size Guide",
+    FAQ: "FAQ",
     rights: "All rights reserved",
   },
 
@@ -17,6 +20,8 @@ const translations = {
     contact: "اتصل بنا",
     terms: "الشروط والأحكام",
     privacy: "سياسة الخصوصية",
+    sizeguide: "دليل المقاسات",
+    FAQ: "الأسئلة الشائعة",
     rights: "جميع الحقوق محفوظة",
   },
 };
@@ -34,11 +39,13 @@ export const Footer = () => {
             <p className="text-sm">{t.rights} © 2024</p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">{t.about}</h4>
+            <h4 className="font-semibold mb-4"><Link href="/About">{t.about}</Link></h4>
             <ul className="space-y-2 text-sm">
-              <li>{t.contact}</li>
-              <li>{t.terms}</li>
-              <li>{t.privacy}</li>
+              <li><Link href="/Contact">{t.contact}</Link> </li>
+              <li><Link href="/Terms">{t.terms}</Link> </li>
+              <li><Link href="/privacy">{t.privacy}</Link></li>
+              <li><Link href="/SizeGuide">{t.sizeguide}</Link></li>
+              <li><Link href="/FAQ">{t.FAQ}</Link></li>
             </ul>
           </div>
         </div>

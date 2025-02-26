@@ -1,3 +1,5 @@
+"use client";
+
 
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
@@ -65,7 +67,6 @@ const CheckoutPage = () => {
     e.preventDefault();
     console.log("Processing order:", formData);
 
-    // 🔹 محاكاة إرسال الطلب ثم التوجيه إلى صفحة النجاح
     setTimeout(() => {
       router.push("/order-success");
     }, 1000);
@@ -75,7 +76,6 @@ const CheckoutPage = () => {
     <div className="max-w-3xl mx-auto px-4 py-16">
       <h2 className="text-2xl font-bold mb-8 dark:text-white">{t.title}</h2>
       <form onSubmit={handleSubmit} className="space-y-8">
-        {/* 🔹 معلومات الاتصال */}
         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
           <h3 className="text-lg font-semibold mb-4 dark:text-white">
             {t.contact}
@@ -102,7 +102,6 @@ const CheckoutPage = () => {
           </div>
         </div>
 
-        {/* 🔹 تفاصيل الدفع */}
         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
           <h3 className="text-lg font-semibold mb-4 dark:text-white">
             {t.payment}
@@ -140,7 +139,6 @@ const CheckoutPage = () => {
           </div>
         </div>
 
-        {/* 🔹 زر الإرسال */}
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold dark:text-white">
             {t.total}: ${total.toFixed(2)}
