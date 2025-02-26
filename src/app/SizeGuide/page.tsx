@@ -75,9 +75,9 @@ const SizeGuidePage = () => {
               {Object.entries(sizeChart).map(([size, measurements]) => (
                 <tr key={size} className="border-b dark:border-gray-700">
                   <td className="py-2 font-medium dark:text-white">{size}</td>
-                  <td className="py-2 dark:text-gray-300">{measurements.bust}"</td>
-                  <td className="py-2 dark:text-gray-300">{measurements.waist}"</td>
-                  <td className="py-2 dark:text-gray-300">{measurements.hips}"</td>
+                  <td className="py-2 dark:text-gray-300">{measurements.bust}&quot;</td>
+                  <td className="py-2 dark:text-gray-300">{measurements.waist}&quot;</td>
+                  <td className="py-2 dark:text-gray-300">{measurements.hips}&quot;</td>
                 </tr>
               ))}
             </tbody>
